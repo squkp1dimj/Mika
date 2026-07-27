@@ -103,6 +103,14 @@ textarea {
   flex: 1;
   padding: 16px 20px;
 }
+
+/* ✅ استایل placeholder */
+.input-box input::placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 0.7;
+}
+
 .input-box button {
   width: 55px;
   height: 55px;
@@ -413,6 +421,14 @@ body {
   padding: 0 20px;
   font-size: 16px;
 }
+
+/* ✅ placeholder برای input اصلی */
+.input-box input::placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 0.7;
+}
+
 .input-box input:focus {
   border-color: #2563eb;
 }
@@ -666,6 +682,14 @@ body,
   flex: 1;
   font-size: 17px;
 }
+
+/* ✅ placeholder برای empty input */
+.empty-input input::placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
 .empty-input button {
   width: 45px;
   height: 45px;
@@ -1310,6 +1334,11 @@ button {
   background: #fff;
   border: 1px solid #cbd5e1;
 }
+
+:root[data-theme="light"] input::placeholder {
+  color: #94a3b8;
+}
+
 :root[data-theme="light"] .chat-item {
   color: #111827;
   background: #f8fafc;
