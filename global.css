@@ -127,21 +127,46 @@ textarea {
   border-radius: 18px;
   padding: 14px 18px;
 }
+
+/* ✅ اصلاح دکمه های اکشن */
 .message-actions {
   opacity: 0.6;
   gap: 8px;
   margin-top: 10px;
   display: flex;
+  justify-content: flex-start; /* سمت چپ */
+  flex-direction: row; /* از راست به چپ */
 }
+
 .message-actions button {
   color: var(--text-main);
   cursor: pointer;
   background: 0 0;
   border: none;
+  transition: color 0.2s ease;
 }
+
 .message-actions button:hover {
   opacity: 1;
 }
+
+/* ✅ رنگ دکمه های لایک و دیسلایک */
+.message-actions button.like:hover {
+  color: #22c55e; /* سبز */
+}
+
+.message-actions button.like.active {
+  color: #22c55e; /* سبز فعال */
+}
+
+.message-actions button.dislike:hover {
+  color: #ef4444; /* قرمز */
+}
+
+.message-actions button.dislike.active {
+  color: #ef4444; /* قرمز فعال */
+}
+
 .code-block {
   background: #0d1117;
   border-radius: 12px;
@@ -998,619 +1023,41 @@ body,
 }
 .chat-title {
   text-align: right;
-  width: 100%;
-  padding: 5px 8px 5px 70px !important;
+  direction: rtl !important;
 }
-.pin-icon {
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute !important;
-  left: 38px !important;
-  right: auto !important;
-}
-.chat-title {
-  font-size: 13px !important;
-  line-height: 18px !important;
-}
-.chat-more,
-.open-icon,
-.pin-icon {
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute !important;
-}
-.chat-more {
-  left: 8px !important;
-}
-.open-icon {
-  cursor: pointer;
-  left: 62px !important;
-}
-.pin-icon {
-  left: 38px !important;
-}
-.chat-item {
-  direction: rtl;
-  min-height: 34px;
-  margin-bottom: 3px !important;
-  position: relative !important;
-}
-.chat-title {
-  text-align: right;
-  padding-left: 90px !important;
-  padding-right: 8px !important;
-  font-size: 13px !important;
-}
-.open-icon {
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute !important;
-  left: 38px !important;
-}
-.pin-icon {
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute !important;
-  left: 64px !important;
-}
-.open-icon,
-.pin-icon {
-  display: none !important;
-}
-.chat-title {
-  padding-left: 45px !important;
-  padding-right: 8px !important;
-}
-.chat-more {
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute !important;
-  left: 8px !important;
-  right: auto !important;
-}
-.chat-item {
-  min-height: 34px;
-  min-height: 28px !important;
-  margin-bottom: 2px !important;
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
-}
-.chat-title {
-  padding-top: 3px !important;
-  padding-bottom: 3px !important;
-  line-height: 18px !important;
-}
-.chat-item {
-  min-height: 32px !important;
-  margin-bottom: 6px !important;
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
-}
-.history-title {
-  margin-top: 12px !important;
-  margin-bottom: 8px !important;
-}
-.thinking-indicator {
-  align-items: center;
-  gap: 5px;
-  margin: 12px 0;
-  padding-left: 55px;
+
+/* ✅ اصلاح سه نقطه فکر کردن (Thinking indicator) */
+.thinking-dots {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 15px 0;
 }
-.thinking-indicator span {
-  background: #8b5cf6;
-  border-radius: 50%;
+
+.thinking-dots span {
   width: 8px;
   height: 8px;
-  animation: 1.4s ease-in-out infinite thinking;
+  background: #94a3b8;
+  border-radius: 50%;
+  animation: pulse 1.4s infinite;
 }
-.thinking-indicator span:nth-child(2) {
+
+.thinking-dots span:nth-child(2) {
   animation-delay: 0.2s;
 }
-.thinking-indicator span:nth-child(3) {
+
+.thinking-dots span:nth-child(3) {
   animation-delay: 0.4s;
 }
-@keyframes thinking {
-  0%,
-  80%,
-  to {
-    opacity: 0.25;
-    transform: scale(0.8);
-  }
-  40% {
-    opacity: 1;
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
     transform: scale(1);
   }
-}
-html,
-body,
-#root {
-  direction: rtl;
-}
-.chat-page {
-  text-align: start;
-  direction: rtl;
-}
-.messages {
-  direction: rtl;
-}
-.message-bubble {
-  text-align: start;
-  unicode-bidi: plaintext;
-}
-.message-bubble p,
-.message-bubble div {
-  unicode-bidi: plaintext;
-}
-.input-box {
-  direction: rtl;
-}
-.input-box input {
-  text-align: start;
-  direction: rtl;
-}
-input,
-textarea {
-  unicode-bidi: plaintext;
-}
-pre,
-code,
-pre code {
-  text-align: left;
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-.chat-title,
-.history-title,
-.profile {
-  text-align: start;
-}
-button {
-  unicode-bidi: plaintext;
-}
-.message-bubble {
-  text-align: right;
-  direction: rtl;
-  unicode-bidi: plaintext;
-  line-height: 2;
-}
-.message-bubble * {
-  unicode-bidi: plaintext;
-}
-.message-bubble pre,
-.message-bubble code {
-  text-align: left;
-  direction: ltr;
-  unicode-bidi: isolate;
-  display: block;
-}
-.message-bubble a {
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-.message-bubble strong,
-.message-bubble span,
-.message-bubble p {
-  unicode-bidi: plaintext;
-}
-.code-card {
-  text-align: left;
-  direction: ltr;
-  background: #111827;
-  border-radius: 12px;
-  margin: 16px 0;
-  overflow: hidden;
-}
-.code-header {
-  color: #d1d5db;
-  background: #1f2937;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-  padding: 0 14px;
-  font-size: 13px;
-  display: flex;
-}
-.code-header button {
-  color: var(--text-main);
-  cursor: pointer;
-  background: #374151;
-  border: 0;
-  border-radius: 6px;
-  padding: 5px 12px;
-}
-.code-card pre {
-  margin: 0 !important;
-  padding: 16px !important;
-  font-size: 14px !important;
-}
-.inline-code {
-  color: #f3f4f6;
-  direction: ltr;
-  background: #2f2f2f;
-  border: 1px solid #444;
-  border-radius: 6px;
-  padding: 3px 8px;
-  font-family: monospace;
-  font-size: 0.9em;
-}
-.theme-switch {
-  margin-top: auto;
-  padding-top: 20px;
-}
-.theme-button {
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  width: 100%;
-  height: 42px;
-  color: var(--text-main);
-  cursor: pointer;
-  border-radius: 12px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.25s;
-  display: flex;
-}
-.theme-button:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
-}
-:root[data-theme="light"] body {
-  color: #111827;
-  background: linear-gradient(135deg, #fff, #f1f5f9);
-}
-:root[data-theme="light"] .sidebar {
-  color: #111827;
-  background: #fff;
-  border-color: #e2e8f0;
-}
-:root[data-theme="light"] .message-content,
-:root[data-theme="light"] .menu-item,
-:root[data-theme="light"] .history-title,
-:root[data-theme="light"] .profile {
-  color: #111827;
-}
-:root[data-theme="light"] .user .message-content,
-:root[data-theme="light"] .assistant .message-content {
-  color: #111827;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-}
-:root[data-theme="light"] input,
-:root[data-theme="light"] textarea {
-  color: #111827;
-  background: #fff;
-  border: 1px solid #cbd5e1;
-}
-:root[data-theme="light"] .chat-item {
-  color: #111827;
-  background: #f8fafc;
-}
-:root[data-theme="light"] .chat-item:hover {
-  background: #e2e8f0;
-}
-:root[data-theme="light"] pre,
-:root[data-theme="light"] code {
-  color: #f8fafc;
-  background: #111827;
-}
-:root[data-theme="light"] button {
-  color: #111827;
-}
-.message-actions {
-  direction: ltr;
-  gap: 8px;
-  margin-top: 8px;
-  display: flex;
-}
-.message-actions button {
-  border: 1px solid var(--border);
-  cursor: pointer;
-  background: 0 0;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  display: flex;
-}
-.message-actions button:hover {
-  background: var(--bg-card);
-}
-.chat-message {
-  align-items: flex-start;
-}
-.message-body {
-  width: 100%;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  display: flex !important;
-}
-.message-content {
-  width: 100%;
-  order: 1 !important;
-}
-.message-actions {
-  order: 2 !important;
-  margin-top: 12px !important;
-  margin-left: 0 !important;
-  m
-:root[data-theme="light"] .chat-menu {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-:root[data-theme="light"] .chat-menu button {
-  color: #111827;
-}
-
-:root[data-theme="light"] .chat-menu button:hover {
-  background: #f1f5f9;
-}
-
-:root[data-theme="dark"] .chat-menu {
-  background: #1e293b;
-  border: 1px solid #334155;
-}
-
-:root[data-theme="dark"] .chat-menu button {
-  color: #ffffff;
-}
-
-:root[data-theme="dark"] .chat-menu button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* AI messages without card */
-.assistant-content {
-  width: 100%;
-  line-height: 1.9;
-  font-size: 16px;
-  color: var(--text-main);
-}
-
-/* user messages */
-.user-content {
-  background: var(--button-bg);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 18px;
-  max-width: 80%;
-  line-height: 1.8;
-}
-
-/* only code blocks get card */
-.code-card {
-  background: var(--code-bg);
-  border: 1px solid var(--code-border);
-  border-radius: 14px;
-  overflow: hidden;
-  margin: 15px 0;
-}
-
-/* remove markdown paragraph card feeling */
-.assistant-content p {
-  margin: 12px 0;
-}
-
-/* inline code */
-.inline-code {
-  background: rgba(127, 127, 127, 0.15);
-  padding: 3px 7px;
-  border-radius: 6px;
-  direction: ltr;
-  font-family: monospace;
-}
-
-/* =========================
-   ChatGPT style messages
-========================= */
-
-/* پیام کاربر - کارت داشته باشد */
-.chat-message.user .user-content {
-  background: var(--bg-card);
-
-  border: 1px solid var(--border);
-
-  padding: 12px 18px;
-
-  border-radius: 18px;
-
-  max-width: 75%;
-
-  margin-left: auto;
-
-  color: var(--text-main);
-}
-
-/* پیام هوش مصنوعی - بدون کارت */
-.chat-message.assistant .assistant-content {
-  background: transparent;
-
-  border: none;
-
-  padding: 0;
-
-  max-width: 900px;
-
-  color: var(--text-main);
-}
-
-/* کدها همیشه کارت خودشان را دارند */
-.code-card {
-  background: #0d1117;
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  border: 1px solid #30363d;
-
-  margin: 15px 0;
-}
-
-.code-header {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  padding: 8px 12px;
-
-  background: #161b22;
-
-  color: #94a3b8;
-
-  font-size: 13px;
-}
-
-/* متن معمولی AI */
-.chat-message.assistant {
-  display: flex;
-
-  justify-content: flex-start;
-
-  width: 100%;
-}
-
-.chat-message.user {
-  display: flex;
-
-  justify-content: flex-end;
-
-  width: 100%;
-}
-
-/* متن داخل AI */
-.assistant-content p {
-  margin: 8px 0;
-
-  line-height: 1.9;
-}
-
-/* متن داخل کاربر */
-.user-content p {
-  margin: 0;
-
-  line-height: 1.8;
-}
-dius:14px;
-    overflow:hidden;
-    margin:15px 0;
-}
-
-
-/* remove markdown paragraph card feeling */
-.assistant-content p{
-    margin:12px 0;
-}
-
-
-/* inline code */
-.inline-code{
-    background:rgba(127,127,127,.15);
-    padding:3px 7px;
-    border-radius:6px;
-    direction:ltr;
-    font-family:monospace;
-}
-/* =========================
-   ChatGPT style messages
-========================= */
-
-
-/* پیام کاربر - کارت داشته باشد */
-.chat-message.user .user-content{
-
-background:var(--bg-card);
-
-border:1px solid var(--border);
-
-padding:12px 18px;
-
-border-radius:18px;
-
-max-width:75%;
-
-margin-left:auto;
-
-color:var(--text-main);
-
-}
-
-
-/* پیام هوش مصنوعی - بدون کارت */
-.chat-message.assistant .assistant-content{
-
-background:transparent;
-
-border:none;
-
-padding:0;
-
-max-width:900px;
-
-color:var(--text-main);
-
-}
-
-
-/* کدها همیشه کارت خودشان را دارند */
-.code-card{
-
-background:#0d1117;
-
-border-radius:12px;
-
-overflow:hidden;
-
-border:1px solid #30363d;
-
-margin:15px 0;
-
-}
-
-
-.code-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:8px 12px;
-
-background:#161b22;
-
-color:#94a3b8;
-
-font-size:13px;
-
-}
-
-
-/* متن معمولی AI */
-.chat-message.assistant{
-
-display:flex;
-
-justify-content:flex-start;
-
-width:100%;
-
-}
-
-
-.chat-message.user{
-
-display:flex;
-
-justify-content:flex-end;
-
-width:100%;
-
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
