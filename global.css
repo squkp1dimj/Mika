@@ -104,11 +104,29 @@ textarea {
   padding: 16px 20px;
 }
 
-/* ✅ استایل placeholder */
+/* ✅ استایل placeholder - تمام input ها */
 .input-box input::placeholder {
   color: #94a3b8;
   font-size: 15px;
-  opacity: 0.7;
+  opacity: 1;
+}
+
+.input-box input::-webkit-input-placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
+}
+
+.input-box input::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
+}
+
+.input-box input:-ms-input-placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
 }
 
 .input-box button {
@@ -346,6 +364,14 @@ body {
   outline: none;
   width: 100%;
 }
+
+/* ✅ placeholder برای history search */
+.history-search input::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+  opacity: 1;
+}
+
 body {
   margin: 0;
 }
@@ -422,11 +448,29 @@ body {
   font-size: 16px;
 }
 
-/* ✅ placeholder برای input اصلی */
+/* ✅ placeholder برای main input */
 .input-box input::placeholder {
   color: #94a3b8;
-  font-size: 15px;
-  opacity: 0.7;
+  font-size: 16px;
+  opacity: 1;
+}
+
+.input-box input::-webkit-input-placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 1;
+}
+
+.input-box input::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 1;
+}
+
+.input-box input:-ms-input-placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 1;
 }
 
 .input-box input:focus {
@@ -687,7 +731,25 @@ body,
 .empty-input input::placeholder {
   color: #94a3b8;
   font-size: 16px;
-  opacity: 0.7;
+  opacity: 1;
+}
+
+.empty-input input::-webkit-input-placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 1;
+}
+
+.empty-input input::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 1;
+}
+
+.empty-input input:-ms-input-placeholder {
+  color: #94a3b8;
+  font-size: 16px;
+  opacity: 1;
 }
 
 .empty-input button {
@@ -765,9 +827,6 @@ body,
 }
 .input-box button:hover {
   background: #1d4ed8;
-}
-.input-box input::placeholder {
-  color: #94a3b8;
 }
 .input-box button {
   justify-content: center;
@@ -1335,8 +1394,29 @@ button {
   border: 1px solid #cbd5e1;
 }
 
+/* ✅ placeholder برای light theme */
 :root[data-theme="light"] input::placeholder {
   color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
+}
+
+:root[data-theme="light"] input::-webkit-input-placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
+}
+
+:root[data-theme="light"] input::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
+}
+
+:root[data-theme="light"] input:-ms-input-placeholder {
+  color: #94a3b8;
+  font-size: 15px;
+  opacity: 1;
 }
 
 :root[data-theme="light"] .chat-item {
